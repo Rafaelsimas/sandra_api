@@ -13,7 +13,7 @@ app.use(express.json())
 const conn = require("./db/conn")
 conn()
 
-//rotasss
+//rotassss
 const routes = require("./routes/router")
 app.use("/api", routes)
 
