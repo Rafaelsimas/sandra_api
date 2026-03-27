@@ -1,18 +1,21 @@
 const express = require("express")
-require("dotenv").config()
 const cors = require("cors")
-const app = express()
-const port = process.env.PORT || 3335
+require("dotenv").config()
 
-/* MIDDLEWARES */
+const app = express()
+
 app.use(cors())
 app.use(express.json())
 
-//DB Connection
+// Conexão
+const connect = require("./db/conn")
 
-const conn = require("./db/conn")
-conn()
+// Conecta apenas quando a função serverless é chamada
+connect()
 
-//rotasssss
+// Rotas
 const routes = require("./routes/router")
 app.use("/api", routes)
+
+// Não use app.listen() na Vercel!
+module.exports = app
