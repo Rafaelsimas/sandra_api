@@ -11,7 +11,7 @@ async function connect() {
     isConnected = true
     console.log("MongoDB conectado")
   } catch (err) {
-    console.error("Erro ao conectar no MongoDB:", err)
+    console.error("Erro ao conectar MongoDB:", err)
   }
 }
 
