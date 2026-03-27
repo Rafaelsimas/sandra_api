@@ -16,11 +16,3 @@ conn()
 //rotasssss
 const routes = require("./routes/router")
 app.use("/api", routes)
-
-app.listen(port, function () {
-  console.log(`
-    ---------------------------------------------------------
-    SERVIDOR RODANDO NA URL (http://localhost:${port})
-    ---------------------------------------------------------
-    `)
-})
