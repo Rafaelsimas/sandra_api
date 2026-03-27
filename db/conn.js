@@ -9,9 +9,9 @@ async function connect() {
     mongoose.set("strictQuery", true)
     await mongoose.connect(process.env.MONGO_URL)
     isConnected = true
-    console.log("MongoDB conectado ✓")
-  } catch (error) {
-    console.error("Erro ao conectar MongoDB:", error)
+    console.log("MongoDB conectado")
+  } catch (err) {
+    console.error("Erro ao conectar no MongoDB:", err)
   }
 }
 
